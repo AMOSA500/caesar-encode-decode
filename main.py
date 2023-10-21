@@ -8,7 +8,9 @@ alphabets =[
 
 def cipher(text, shift_amount, direction):
   encrypted_text = ""
-  direction_dict = {1:"encode", 2:"decode"}
+  direction_dict = {
+    1:"encode", 
+    2:"decode"}
   #Encode here
   if direction_dict[direction] == "encode":
     shift_amount = shift_amount
@@ -33,7 +35,7 @@ def cipher(text, shift_amount, direction):
       encrypted_text += x
   
 
-  print(f"{text} was encode to {encrypted_text}")
+  print(f"{text} was {direction_dict[direction]} to {encrypted_text}")
 
 start = False
 
