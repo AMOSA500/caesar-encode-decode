@@ -22,14 +22,9 @@ def cipher(text, shift_amount, direction):
     if x in alphabets:
       position = alphabets.index(x)
       shift_position = position + shift_amount
-      if shift_position > 25 or shift_position < 25:
+      if shift_position > 26 or shift_position < 26:
         # Check if shift_amount is perfectly divided.
-        if shift_amount%25 == 0:
-          if direction_dict[direction] == "encode":
-            shift_position = shift_position%25 + 1
-          else:
-            shift_position = shift_position%25 - 1
-        r_char = alphabets[shift_position%25]
+        r_char = alphabets[shift_position%26]
         encrypted_text += r_char
       else:
         r_char = alphabets[shift_position]
